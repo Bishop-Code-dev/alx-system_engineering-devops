@@ -1,3 +1,2 @@
 #!/bin/bash
 rsync -av --exclude='*' --include='*.html' --update --progress ./ ../
-
