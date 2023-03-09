@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1ap | awk '{printf "%s%s", $0~/\/$/ ? $0 : $0", ", NR%6==0 || NR==n ? "\n" : ""} END{print ""}' n=$(ls -1ap | wc -l) | sed 's/,$//'
+ls -1ap | sed -e 's/[^\/]*$/&\//' -e 's/^/.\//' | tr '\n' ',' | sed 's/,$/\n/'
